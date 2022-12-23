@@ -1,0 +1,39 @@
+import { Component, HostListener } from '@angular/core';
+
+@Component({
+  selector: 'app-scroll-detector',
+  template: `
+    <nav>
+      <a [class.active]="currentPosition >= 0 && currentPosition < section1" (click)="scrollTo('section1')">Section 1</a>
+      <a [class.active]="currentPosition >= section1 && currentPosition < section2" (click)="scrollTo('section2')">Section 2</a>
+      <a [class.active]="currentPosition >= section2 && currentPosition < section3" (click)="scrollTo('section3')">Section 3</a>
+      <a [class.active]="currentPosition >= section3" (click)="scrollTo('section4')">Section 4</a>
+    </nav>
+    <div id="section1" class="section">Section 1</div>
+    <div id="section2" class="section">Section 2</div>
+    <div id="section3" class="section">Section 3</div>
+    <div id="section4" class="section">Section 4</div>
+  `,
+  styleUrls: ['./scroll-detector.component.css']
+})
+export class ScrollDetectorComponent {
+  section1: number;
+  section2: number;
+  section3: number;
+  currentPosition: number;
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: any) {
+    this.currentPosition = window.pageYOffset;
+  }
+
+  ngAfterViewInit() {
+    this.section1 = document.getElementById('section1').offsetTop;
+    this.section2 = document.getElementById('section2').offsetTop;
+    this.section3 = document.getElementById('section3').offsetTop;
+  }
+
+  scrollTo(section: string) {
+    document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
+  }
+}

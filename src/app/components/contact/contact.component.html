@@ -1,0 +1,139 @@
+<div
+  class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 snap-start h-screen pt-14"
+  id="contact-section"
+>
+  <header>
+    <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold tracking-widest text-gray-900">Contact</h1>
+    </div>
+  </header>
+  <div class="flex flex-col md:flex-row h-full items-center pb-24">
+    <div class="w-full flex flex-col md:flex-row">
+      <form
+        class="w-full md:w-1/2 flex flex-col items-center px-4"
+        (submit)="submitForm($event)"
+      >
+        <div class="w-full max-w-lg">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+            Your Name
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="name"
+            type="text"
+            placeholder="John Doe"
+            [(ngModel)]="name"
+            name="name"
+            required
+          />
+        </div>
+
+        <div class="w-full max-w-lg mt-6">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+            Your Email
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="email"
+            type="email"
+            [(ngModel)]="email"
+            placeholder="john@example.com"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="w-full max-w-lg mt-6">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="message"
+          >
+            Your Message
+          </label>
+          <textarea
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
+            id="message"
+            name="message"
+            [(ngModel)]="message"
+            required
+          ></textarea>
+        </div>
+
+        <div class="w-full max-w-lg mt-6">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+      <div class="w-full md:w-1/2 flex flex-col items-center h-full my-auto">
+        <div class="header font-bold text-2xl">Social Links</div>
+        <div class="flex flex-row">
+          <a
+            class="px-2 py-1 mr-2 mt-2"
+            href="https://www.linkedin.com/in/dktemeghanathnalawade/"
+            target="_blank"
+          >
+            <img src="../assets/icons/linkedin.svg" alt="linkedin" />
+          </a>
+          <a
+            class="px-2 py-1 mr-2 mt-2"
+            href="mailto:meghanathms06@gmail.com"
+            target="_blank"
+          >
+            <img src="../assets/icons/gmail.svg" alt="Gmail" />
+          </a>
+          <a
+            class="px-2 py-1 mr-2 mt-2"
+            href="https://api.whatsapp.com/send?phone=919503128746"
+            target="_blank"
+          >
+            <img src="../assets/icons/whatsapp.svg" alt="Whatsapp" />
+          </a>
+          <a
+            class="px-2 py-1 mr-2 mt-2"
+            href="https://twitter.com/themrcompiler"
+            target="_blank"
+          >
+            <img src="../assets/icons/twitter.svg" alt="linkedin" />
+          </a>
+          <a
+            class="px-2 py-1 mr-2 mt-2"
+            href="http://instagram.com/the_mr_compiler"
+            target="_blank"
+          >
+            <img src="../assets/icons/instagram.svg" alt="linkedin" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="absolute bottom-4 left-4 w-11/12 md:w-64 bg-green-500 text-white p-4 rounded-lg"
+  [class.hidden]="!showAlert"
+>
+  <button title="close" class="absolute top-0 right-0 mr-4 mt-4" type="button">
+    <svg class="h-6 w-6 fill-current text-white" viewBox="0 0 20 20">
+      <path
+        d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"
+      />
+    </svg>
+  </button>
+  <p>Message sent successfully!</p>
+</div>
+<div
+  class="absolute bottom-4 left-4 w-11/12 md:w-64 bg-red-500 text-white p-4 rounded-lg"
+  [class.hidden]="!showError"
+>
+  <button title="close" class="absolute top-0 right-0 mr-4 mt-4" type="button">
+    <svg class="h-6 w-6 fill-current text-white" viewBox="0 0 20 20">
+      <path
+        d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"
+      />
+    </svg>
+  </button>
+  <p>Please fill all the fields..!</p>
+</div>
