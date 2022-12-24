@@ -6,7 +6,6 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'megh-portfolio';
   isMenuOpen = false;
   menus = [
     { name: 'Home', link: '#home-section', active: true, offset: 0 },

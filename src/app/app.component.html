@@ -82,7 +82,6 @@
       </div>
     </div>
 
-    <!-- Mobile menu, show/hide based on menu state. -->
     <div
       [class.hidden]="!isMenuOpen"
       [class.block]="isMenuOpen"
@@ -90,17 +89,11 @@
       id="mobile-menu"
     >
       <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-
         <a
           *ngFor="let menu of menus; index as i"
           aria-current="page"
           (click)="changeActive(i)"
-          [ngClass]="{
-            'text-gray-300 hover:bg-gray-700 hover:text-white': !menu.active,
-            'bg-gray-900 text-white': menu.active
-          }"
-          class="block px-3 py-2 rounded-md text-base font-medium"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >{{ menu.name }}</a
         >
       </div>
