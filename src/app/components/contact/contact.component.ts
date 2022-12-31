@@ -37,14 +37,17 @@ export class ContactComponent implements OnInit {
         }
       }
     }
-    fetch('https://formspree.io/f/mayzwpkn', {
-      method: 'POST',
-      body: JSON.stringify({
-        name: this.name,
-        email: this.email,
-        message: this.message,
-      }),
-    })
+    fetch(
+      'https://send.pageclip.co/YErmaH3zTJayqaWiSxm2iqhAfLAZvO2w/contact-form',
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          name: this.name,
+          email: this.email,
+          message: this.message,
+        }),
+      }
+    )
       .then((response) => {
         this.showAlert = true;
         setTimeout(() => {
