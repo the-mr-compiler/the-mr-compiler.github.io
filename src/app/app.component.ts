@@ -9,6 +9,7 @@ export class AppComponent {
   isMenuOpen = false;
   menus = [
     { name: 'Home', link: '#home-section', active: true, offset: 0 },
+    { name: 'Experience', link: '#experience-section', active: false, offset: 0 },
     { name: 'Education', link: '#education-section', active: false, offset: 0 },
     { name: 'Skills', link: '#skills-section', active: false, offset: 0 },
     { name: 'Projects', link: '#projects-section', active: false, offset: 0 },
