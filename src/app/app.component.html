@@ -1,4 +1,5 @@
-<div class="min-h-full bg-sky-100" id="container">
+<div class="min-h-full bg-sky-100 animate-site-entry" id="container">
+  <div id="confetti-wrapper" class="pointer-events-none fixed inset-0"></div>
   <nav class="bg-gray-800 w-full fixed" [class.h-full]="isMenuOpen">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
@@ -10,92 +11,67 @@
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
-              <a
-                *ngFor="let menu of menus; index as i"
-                aria-current="page"
-                (click)="changeActive(i)"
-                class="text-gray-300 hover:bg-gray-700 hover:text-whiteblock px-3 py-2 rounded-md text-base font-medium cursor-pointer"
-                >{{ menu.name }}
-                <!-- [ngClass]="{
-                  'text-gray-300 hover:bg-gray-700 hover:text-white':
-                    !menu.active,
-                  'bg-gray-900 text-white menu-active': menu.active
-                }" --></a
-              >
+              <ng-container *ngFor="let menu of menus; index as i">
+                <ng-container *ngIf="menu.external; else internalMenu">
+                  <a [href]="menu.link" target="_blank" rel="noopener"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium cursor-pointer">{{
+                    menu.name }}</a>
+                </ng-container>
+                <ng-template #internalMenu>
+                  <a aria-current="page" (click)="changeActive(i)"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium cursor-pointer">{{
+                    menu.name }}</a>
+                </ng-template>
+              </ng-container>
             </div>
           </div>
         </div>
         <div class="-mr-2 flex md:hidden">
           <!-- Mobile menu button -->
-          <button
-            type="button"
+          <button type="button"
             class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-            aria-controls="mobile-menu"
-            aria-expanded="false"
-            (click)="isMenuOpen = !isMenuOpen"
-          >
+            aria-controls="mobile-menu" aria-expanded="false" (click)="isMenuOpen = !isMenuOpen">
             <span class="sr-only">Open main menu</span>
             <!--
               Heroicon name: outline/bars-3
 
               Menu open: "hidden", Menu closed: "block"
             -->
-            <svg
-              class="h-6 w-6 transition-transform duration-500 ease-in-out"
-              [ngClass]="{ hidden: isMenuOpen, block: !isMenuOpen }"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
+            <svg class="h-6 w-6 transition-transform duration-500 ease-in-out"
+              [ngClass]="{ hidden: isMenuOpen, block: !isMenuOpen }" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
             <!--
               Heroicon name: outline/x-mark
 
               Menu open: "block", Menu closed: "hidden"
             -->
-            <svg
-              class="h-6 w-6"
-              [ngClass]="{ block: isMenuOpen, hidden: !isMenuOpen }"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
+            <svg class="h-6 w-6" [ngClass]="{ block: isMenuOpen, hidden: !isMenuOpen }"
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
       </div>
     </div>
 
-    <div
-      [class.hidden]="!isMenuOpen"
-      [class.block]="isMenuOpen"
-      class="md:hidden bg-gray-800 absolute w-full z-10 h-full"
-      id="mobile-menu"
-    >
+    <div [class.hidden]="!isMenuOpen" [class.block]="isMenuOpen"
+      class="md:hidden bg-gray-800 absolute w-full z-10 h-full" id="mobile-menu">
       <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-        <a
-          *ngFor="let menu of menus; index as i"
-          aria-current="page"
-          (click)="changeActive(i)"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >{{ menu.name }}</a
-        >
+        <ng-container *ngFor="let menu of menus; index as i">
+          <ng-container *ngIf="menu.external; else internalMobileMenu">
+            <a [href]="menu.link" target="_blank" rel="noopener"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{
+              menu.name }}</a>
+          </ng-container>
+          <ng-template #internalMobileMenu>
+            <a aria-current="page" (click)="changeActive(i)"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{
+              menu.name }}</a>
+          </ng-template>
+        </ng-container>
       </div>
     </div>
   </nav>

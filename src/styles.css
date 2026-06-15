@@ -7,6 +7,15 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(224 242 254 / var(--tw-bg-opacity));
 }
+.animate-site-entry {
+  animation: popper 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+#confetti-wrapper {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
 ::-webkit-scrollbar {
   display: none;
 }

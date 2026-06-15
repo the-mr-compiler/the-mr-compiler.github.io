@@ -1,145 +1,74 @@
-<div
-  class="mx-auto max-w-7xl sm:px-6 lg:px-8 snap-start h-screen pt-16 pb-6"
-  id="contact-section"
->
+<div class="mx-auto max-w-7xl sm:px-6 lg:px-8 snap-start h-screen pt-16 pb-6" id="contact-section">
   <header>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <h1 class="text-3xl font-bold tracking-widest text-gray-900">Contact</h1>
     </div>
   </header>
-  <div class="flex flex-col md:flex-row h-full items-center pb-24">
-    <div class="w-full flex flex-col md:flex-row">
-      <form
-        class="w-full md:w-1/2 flex flex-col items-center px-4"
-        (submit)="submitForm($event)"
-      >
-        <div class="w-full max-w-lg">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
-            Your Name
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="name"
-            type="text"
-            placeholder="John Doe"
-            [(ngModel)]="name"
-            name="name"
-            required
-          />
-        </div>
-
-        <div class="w-full max-w-lg mt-6">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
-            Your Email
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="email"
-            type="email"
-            [(ngModel)]="email"
-            placeholder="john@example.com"
-            name="email"
-            required
-          />
-        </div>
-
-        <div class="w-full max-w-lg mt-6">
-          <label
-            class="block text-gray-700 text-sm font-bold mb-2"
-            for="message"
-          >
-            Your Message
-          </label>
-          <textarea
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
-            id="message"
-            name="message"
-            [(ngModel)]="message"
-            required
-          ></textarea>
-        </div>
-
-        <div class="w-full max-w-lg mt-6">
-          <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
-          >
-            Send Message
-          </button>
-        </div>
-      </form>
-      <div class="w-full md:w-1/2 flex flex-col items-center h-full my-auto">
-        <div class="header font-bold text-2xl">Social Links</div>
-        <div class="flex flex-row">
-          <a
-            class="px-2 py-1 mr-2 mt-2"
-            href="https://github.com/the-mr-compiler"
-            target="_blank"
-          >
-            <img src="../assets/icons/github.svg" alt="linkedin" />
-          </a>
-          <a
-            class="px-2 py-1 mr-2 mt-2"
-            href="https://www.linkedin.com/in/dktemeghanathnalawade/"
-            target="_blank"
-          >
-            <img src="../assets/icons/linkedin.svg" alt="linkedin" />
-          </a>
-          <a
-            class="px-2 py-1 mr-2 mt-2"
-            href="mailto:meghanathms06@gmail.com"
-            target="_blank"
-          >
-            <img src="../assets/icons/gmail.svg" alt="Gmail" />
-          </a>
-          <a
-            class="px-2 py-1 mr-2 mt-2"
-            href="https://api.whatsapp.com/send?phone=919503128746"
-            target="_blank"
-          >
-            <img src="../assets/icons/whatsapp.svg" alt="Whatsapp" />
-          </a>
-          <a
-            class="px-2 py-1 mr-2 mt-2"
-            href="https://twitter.com/themrcompiler"
-            target="_blank"
-          >
-            <img src="../assets/icons/twitter.svg" alt="linkedin" />
-          </a>
-          <a
-            class="px-2 py-1 mr-2 mt-2"
-            href="http://instagram.com/the_mr_compiler"
-            target="_blank"
-          >
-            <img src="../assets/icons/instagram.svg" alt="linkedin" />
-          </a>
-        </div>
+  <div class="flex flex-col md:flex-row h-full items-start pb-24 gap-8">
+    <div
+      class="w-full md:w-1/2 bg-sky-200 p-8 rounded-xl shadow-2xl border hover:border-4 hover:bg-slate-300 transition-all duration-300">
+      <h2 class="font-semibold text-2xl mb-4">Get in touch</h2>
+      <p class="text-gray-700 mb-2"><strong>Email:</strong> <a class="text-blue-700"
+          href="mailto:meghanathms06@gmail.com">meghanathms06@gmail.com</a></p>
+      <p class="text-gray-700 mb-2"><strong>Location:</strong> Pune, India</p>
+      <p class="text-gray-700 mb-2"><strong>LinkedIn:</strong> <a class="text-blue-700"
+          href="https://www.linkedin.com/in/the-mr-compiler/" target="_blank">linkedin.com/in/the-mr-compiler</a></p>
+      <p class="text-gray-700 mb-2"><strong>GitHub:</strong> <a class="text-blue-700"
+          href="https://github.com/the-mr-compiler" target="_blank">github.com/the-mr-compiler</a></p>
+      <p class="text-gray-700 mb-2"><strong>Medium:</strong> <a class="text-blue-700"
+          href="https://mrcompiler.medium.com/" target="_blank">mrcompiler.medium.com</a></p>
+      <div class="mt-6 flex flex-row flex-wrap gap-3">
+        <a class="px-4 py-2 bg-gray-900 text-white rounded-md" href="mailto:meghanathms06@gmail.com">Email</a>
+        <a class="px-4 py-2 bg-blue-600 text-white rounded-md" href="https://www.linkedin.com/in/the-mr-compiler/"
+          target="_blank">LinkedIn</a>
+        <a class="px-4 py-2 bg-black text-white rounded-md" href="https://github.com/the-mr-compiler"
+          target="_blank">GitHub</a>
+        <a class="px-4 py-2 bg-green-600 text-white rounded-md" href="https://mrcompiler.medium.com/"
+          target="_blank">Medium</a>
       </div>
     </div>
+    <form
+      class="w-full md:w-1/2 bg-sky-200 p-8 rounded-xl shadow-2xl border hover:border-4 hover:bg-slate-300 transition-all duration-300"
+      (submit)="submitForm($event)">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Your Name</label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="name" type="text" placeholder="John Doe" [(ngModel)]="name" name="name" required />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Your Email</label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="email" type="email" [(ngModel)]="email" placeholder="john@example.com" name="email" required />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Your Message</label>
+        <textarea
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
+          id="message" name="message" [(ngModel)]="message" required></textarea>
+      </div>
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        type="submit">Send Message</button>
+    </form>
   </div>
 </div>
-<div
-  class="absolute bottom-4 left-4 w-11/12 md:w-64 bg-green-500 text-white p-4 rounded-lg"
-  [class.hidden]="!showAlert"
->
+<div class="absolute bottom-4 left-4 w-11/12 md:w-64 bg-green-500 text-white p-4 rounded-lg"
+  [class.hidden]="!showAlert">
   <button title="close" class="absolute top-0 right-0 mr-4 mt-4" type="button">
     <svg class="h-6 w-6 fill-current text-white" viewBox="0 0 20 20">
       <path
-        d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"
-      />
+        d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" />
     </svg>
   </button>
   <p>Message sent successfully!</p>
 </div>
-<div
-  class="absolute bottom-4 left-4 w-11/12 md:w-64 bg-red-500 text-white p-4 rounded-lg"
-  [class.hidden]="!showError"
->
+<div class="absolute bottom-4 left-4 w-11/12 md:w-64 bg-red-500 text-white p-4 rounded-lg" [class.hidden]="!showError">
   <button title="close" class="absolute top-0 right-0 mr-4 mt-4" type="button">
     <svg class="h-6 w-6 fill-current text-white" viewBox="0 0 20 20">
       <path
-        d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"
-      />
+        d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" />
     </svg>
   </button>
   <p>Please fill all the fields..!</p>
